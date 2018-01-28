@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">دكان 100</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="aboutus">عنا</string>
+    <string name="contactus">تواصل معنا</string>
+    <string name="favorites">مفضلتى</string>
+    <string name="home">الرئيسية</string>
+    <string name="login">دخول</string>
+    <string name="logout">خروج</string>
+    <string name="mymesages">رسائلى</string>
+    <string name="offers">عروض</string>
+    <string name="orders">طلباتى</string>
+    <string name="profile">ملفى</string>
+    <string name="settings">الضبط</string>
+</resources>
