@@ -16,4 +16,21 @@
     <string name="orders">طلباتى</string>
     <string name="profile">ملفى</string>
     <string name="settings">الضبط</string>
+    <string name="countries">أختر الدولة</string>
+    <string name="changelang">تغيير اللغة</string>
+    <string name="loadimages">تحميل الصور</string>
+    <string name="save">حفظ</string>
+    <string name="no">لا</string>
+    <string name="restart">إعادة تشغيل التطبيق ؟</string>
+    <string name="yes">نعم</string>
+    <string name="areyousure">خروج من التطبيق ؟</string>
+    <string name="logintoyouraccount">تسجيل الدخول لحسابك</string>
+    <string name="pass">كلمة المرور</string>
+    <string name="username">أسم المستخدم</string>
+    <string name="forgetpass">نسيت كلمة المرور ؟</string>
+    <string name="forgetuser">نسيت المستخدم ؟</string>
+    <string name="rigister">سجل الان</string>
+    <string name="donthaveaccount">ليس لديك حساب ؟ </string>
+    <string name="skipthis">تخطى هذا</string>
+    <string name="codewillsend">سوف يتم ارسال الرقم السرى على جوالك الان</string>
 </resources>

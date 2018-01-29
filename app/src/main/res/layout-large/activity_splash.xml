@@ -23,19 +23,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/englishbtn"
-        android:layout_margin="20dp" />
+        android:layout_margin="25dp" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="70dp"
         android:background="@drawable/customespanner"
         android:orientation="horizontal"
         android:padding="5dp"
         android:id="@+id/countries_contenr"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="100dp">
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginBottom="150dp">
         <com.weiwangcn.betterspinner.library.BetterSpinner
             android:id="@+id/countryspinner"
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
             android:background="@android:color/transparent"
             android:gravity="center"
             android:spinnerMode="dropdown"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textColor="#ffffff"
             android:hint="@string/countries"
             android:textColorHint="#ececec" />

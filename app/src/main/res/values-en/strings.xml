@@ -16,4 +16,21 @@
     <string name="orders">MyOrders</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
+    <string name="countries">Select Country</string>
+    <string name="changelang">Change Language</string>
+    <string name="loadimages">Loading Images</string>
+    <string name="save">Save</string>
+    <string name="no">No</string>
+    <string name="restart">Restart App ?</string>
+    <string name="yes">Yes</string>
+    <string name="areyousure">Exit App ?</string>
+    <string name="logintoyouraccount">Login to Your Account</string>
+    <string name="pass">Password</string>
+    <string name="username">Username</string>
+    <string name="forgetpass">Forget Password ?</string>
+    <string name="forgetuser">Forget Password ?</string>
+    <string name="rigister">Register Now</string>
+    <string name="donthaveaccount">Do not have account ?</string>
+    <string name="skipthis">Skip This</string>
+    <string name="codewillsend">Code will be sent now on your registered phone</string>
 </resources>
