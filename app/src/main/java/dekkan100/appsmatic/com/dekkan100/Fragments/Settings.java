@@ -1,4 +1,4 @@
-package dekkan100.appsmatic.com.dekkan100;
+package dekkan100.appsmatic.com.dekkan100.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +26,7 @@ import java.util.List;
 import dekkan100.appsmatic.com.dekkan100.Activities.Home;
 import dekkan100.appsmatic.com.dekkan100.Activities.Splash;
 import dekkan100.appsmatic.com.dekkan100.Prefs.SaveSharedPreference;
+import dekkan100.appsmatic.com.dekkan100.R;
 
 public class Settings extends Fragment {
 

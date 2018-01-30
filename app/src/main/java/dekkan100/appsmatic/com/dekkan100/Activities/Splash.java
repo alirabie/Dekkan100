@@ -3,6 +3,7 @@ package dekkan100.appsmatic.com.dekkan100.Activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +45,7 @@ public class Splash extends AppCompatActivity {
     private static final String SAUDI_ID="69";
     private static LinearLayout contriesBox;
     private ImageView langBtn;
+    private Typeface face;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,9 @@ public class Splash extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
+
+        //font style
+        face= Typeface.createFromAsset(getAssets(), "arabic.ttf");
 
         langBtn=(ImageView)findViewById(R.id.lang_btn);
         //Set images languages
@@ -87,17 +92,19 @@ public class Splash extends AppCompatActivity {
         });
 
 
-/*
-        //Set images languages
-        if(SaveSharedPreference.getLangId(this).equals("ar")){
-            bg.setBackground(getResources().getDrawable(R.drawable.backg));
-        }else{
-            bg.setBackground(getResources().getDrawable(R.drawable.location_bg_en));
-        }
-*/
+
+
+
         countriesspinner = (BetterSpinner) findViewById(R.id.countryspinner);
+        countriesspinner.setTypeface(face);
         contriesBox=(LinearLayout)findViewById(R.id.countries_contenr);
         bg=(FrameLayout)findViewById(R.id.bg);
+        //Set images languages
+        if(SaveSharedPreference.getLangId(this).equals("ar")){
+            bg.setBackground(getResources().getDrawable(R.drawable.splach_ar));
+        }else{
+            bg.setBackground(getResources().getDrawable(R.drawable.splashscreen));
+        }
         //spanners default adaptors
         countriesspinner.setAdapter(new ArrayAdapter<>(Splash.this, android.R.layout.simple_list_item_1));
         //items visibility
@@ -126,7 +133,7 @@ public class Splash extends AppCompatActivity {
                     //add names to spinner list
                     ArrayAdapter<String> cuntryadapter = new ArrayAdapter<>(Splash.this, android.R.layout.simple_list_item_1, countriesNames);
                     cuntryadapter.notifyDataSetChanged();
-                    countriesspinner.setTypeface(Home.face);
+                    countriesspinner.setTypeface(face);
                     countriesspinner.setAdapter(cuntryadapter);
 
 
@@ -134,9 +141,8 @@ public class Splash extends AppCompatActivity {
                     countriesspinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-
                             Toast.makeText(getApplicationContext(),countriesNames.get(position),Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Splash.this, Home.class).putExtra("countrykey", countriesNames.get(position)));
+                            startActivity(new Intent(Splash.this, Login.class).putExtra("countrykey", countriesNames.get(position)));
                             Splash.this.finish();
 
                         }

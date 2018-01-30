@@ -1,15 +1,13 @@
 package dekkan100.appsmatic.com.dekkan100.Activities;
 
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -28,11 +26,12 @@ import android.widget.Toast;
 import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
 import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 
+import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
 import dekkan100.appsmatic.com.dekkan100.R;
-import dekkan100.appsmatic.com.dekkan100.Settings;
+import dekkan100.appsmatic.com.dekkan100.Fragments.Settings;
 
 public class Home extends AppCompatActivity{
-    private LinearLayout settings;
+    private LinearLayout settings,home;
     private TextView tittle ;
     private boolean doubleBackToExitPressedOnce = false;
     public static Typeface face;
@@ -58,7 +57,38 @@ public class Home extends AppCompatActivity{
         }
 
 
+
+        //add main screen
+        android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_container, new Main());
+        fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+        fragmentTransaction.commit();
+
+
+
+
         //Side menu
+
+       //home
+        home=(LinearLayout)findViewById(R.id.home_link);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Home.animateClick(home,Home.this);
+                android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_container,new Main());
+                fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+                fragmentTransaction.commit();
+                tittle.setVisibility(View.INVISIBLE);
+                tittle.setText("");
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+
+        //settings
         settings=(LinearLayout)findViewById(R.id.settings_link);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,20 +177,16 @@ public class Home extends AppCompatActivity{
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            //START FIRST SCREEN
-            /*
-            Categories categories2=new Categories();
+
+            //add main screen
             android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
             android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragmentcontener, categories2);
+            fragmentTransaction.replace(R.id.main_container,new Main());
             fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
             fragmentTransaction.commit();
-            districtes.setText("");
-            cities.setText("");
+            tittle.setVisibility(View.INVISIBLE);
             tittle.setText("");
-            topButtons.setVisibility(View.VISIBLE);
-            spainnersBox.setVisibility(View.VISIBLE);
-*/
+
             Toast.makeText(this, "Press Again", Toast.LENGTH_SHORT).show();
             if (doubleBackToExitPressedOnce) {
                 final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(Home.this);
@@ -225,6 +251,24 @@ public class Home extends AppCompatActivity{
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
+    //Animate button click
+    public static void animateClick(View view,Context context){
+        Animation anim = AnimationUtils.loadAnimation(context, R.anim.alpha);
+        view.clearAnimation();
+        view.setAnimation(anim);
+    }
+
+
+
+
+
+
+
+
 
 
 }

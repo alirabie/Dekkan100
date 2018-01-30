@@ -33,4 +33,25 @@
     <string name="donthaveaccount">ليس لديك حساب ؟ </string>
     <string name="skipthis">تخطى هذا</string>
     <string name="codewillsend">سوف يتم ارسال الرقم السرى على جوالك الان</string>
+    <string name="signup">تسجيل حساب جديد</string>
+    <string name="email">البريد الإلكترونى</string>
+    <string name="haveaccount">لديك حساب بالفعل ؟</string>
+    <string name="password">كلمة المرور 8 ارقام او احرف</string>
+    <string name="phone">رقم الجوال لتفعيل الحساب</string>
+    <string name="reg">تسجيل</string>
+    <string name="repassword">تأكيد كلمة المرور</string>
+    <string name="signin">تسجيل دخول</string>
+    <string name="insertcode">من فضلك أدخل الرمز المرسل لك بالجوال</string>
+    <string name="veificationcode">رمز التفعيل</string>
+    <string name="verify">تأكيد</string>
+    <string name="activeaccount">تفعيل الحساب</string>
+    <string name="search">بحث</string>
+    <string name="category">الفئة</string>
+    <string name="city">المدينة</string>
+    <string name="discounted">المنتجات المخفضة</string>
+    <string name="mostrequested">الاكثر طلبا</string>
+    <string name="price">السعر</string>
+    <string name="cate">فئات</string>
+    <string name="sale">تصفية</string>
+    <string name="vindors">دكاكين</string>
 </resources>

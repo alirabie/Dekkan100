@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dekkan100.appsmatic.com.dekkan100.Fragments.SignupFrags.ActiveAccountFactor2">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/insertcode"
+        android:id="@+id/pleaseinsertcode_tv"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:padding="25dp"
+        android:textSize="25dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/ver_code_input"
+            android:padding="10dp"
+            android:gravity="center"
+            android:hint="@string/veificationcode"
+            android:textSize="25dp"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/verify"
+            android:id="@+id/ver_btn"
+            android:gravity="center"
+            android:background="@drawable/backg_btn"
+            android:textColor="#ffffff"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</RelativeLayout>

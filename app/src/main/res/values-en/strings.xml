@@ -33,4 +33,25 @@
     <string name="donthaveaccount">Do not have account ?</string>
     <string name="skipthis">Skip This</string>
     <string name="codewillsend">Code will be sent now on your registered phone</string>
+    <string name="signup">Register New Account</string>
+    <string name="email">Email</string>
+    <string name="haveaccount">Already Have Account ?</string>
+    <string name="password">password 8 chars or digits</string>
+    <string name="phone">Phone Number to Active Account</string>
+    <string name="reg">Register</string>
+    <string name="repassword">Verifying Password</string>
+    <string name="signin">SignIn</string>
+    <string name="insertcode">Please inset phone verification code</string>
+    <string name="veificationcode">Verification Code</string>
+    <string name="verify">Verify</string>
+    <string name="activeaccount">Active Account</string>
+    <string name="search">Search</string>
+    <string name="category">Category</string>
+    <string name="city">City</string>
+    <string name="discounted">Discounted Products</string>
+    <string name="mostrequested">Most Requested</string>
+    <string name="price">Price</string>
+    <string name="cate">Categories</string>
+    <string name="sale">Sale</string>
+    <string name="vindors">Stores</string>
 </resources>

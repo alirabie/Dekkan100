@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dekkan100.appsmatic.com.dekkan100.Fragments.Filter"
+    android:background="#63999999">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#000000"
+        android:layout_marginTop="20dp">
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_margin="0.5dp"
+            android:padding="15dp"
+            android:hint="@string/city"
+            android:id="@+id/filter_city_sp"
+            android:textSize="25dp" />
+    </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#000000"
+            android:layout_marginTop="20dp">
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_margin="0.5dp"
+                android:padding="15dp"
+                android:hint="@string/category"
+                android:id="@+id/filter_category_sp"
+                android:textSize="25dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#000000"
+            android:layout_marginTop="20dp">
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_margin="0.5dp"
+                android:padding="15dp"
+                android:hint="@string/mostrequested"
+                android:id="@+id/filter_mostrequsted_sp"
+                android:textSize="25dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#000000"
+            android:layout_marginTop="20dp">
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_margin="0.5dp"
+                android:padding="15dp"
+                android:hint="@string/price"
+                android:id="@+id/filter_price_sp"
+                android:textSize="25dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#000000"
+            android:layout_marginTop="20dp">
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_margin="0.5dp"
+                android:padding="15dp"
+                android:hint="@string/discounted"
+                android:id="@+id/filter_discounted_sp"
+                android:textSize="25dp" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/search"
+            android:id="@+id/filter_btn"
+            android:textColor="#ffffff"
+            android:background="@drawable/backg_btn"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="25dp" />
+    </LinearLayout>
+</RelativeLayout>
