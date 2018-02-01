@@ -54,4 +54,6 @@
     <string name="cate">Categories</string>
     <string name="sale">Sale</string>
     <string name="vindors">Stores</string>
+    <string name="messagestab">Messages</string>
+    <string name="profiletab">Profile</string>
 </resources>

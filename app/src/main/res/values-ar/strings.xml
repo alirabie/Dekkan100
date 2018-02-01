@@ -54,4 +54,6 @@
     <string name="cate">فئات</string>
     <string name="sale">تصفية</string>
     <string name="vindors">دكاكين</string>
+    <string name="messagestab">الرسائل</string>
+    <string name="profiletab">الملف الشخصى</string>
 </resources>

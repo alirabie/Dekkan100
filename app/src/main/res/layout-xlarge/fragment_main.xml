@@ -15,7 +15,7 @@
         android:textSize="20sp"
         android:layout_marginTop="?attr/actionBarSize"
         style="@style/pagertabs"
-        app:pstsIndicatorColor="@color/colorPrimaryDark" />
+        app:pstsIndicatorColor="@color/colorPrimary" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager_main"

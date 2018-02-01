@@ -27,11 +27,13 @@ import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
 import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 
 import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
+import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileFrag;
+import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileMasterFrag;
 import dekkan100.appsmatic.com.dekkan100.R;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Settings;
 
 public class Home extends AppCompatActivity{
-    private LinearLayout settings,home;
+    private LinearLayout settings,home,profile;
     private TextView tittle ;
     private boolean doubleBackToExitPressedOnce = false;
     public static Typeface face;
@@ -75,10 +77,10 @@ public class Home extends AppCompatActivity{
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Home.animateClick(home,Home.this);
+                Home.animateClick(home, Home.this);
                 android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
                 android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.main_container,new Main());
+                fragmentTransaction.replace(R.id.main_container, new Main());
                 fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
                 fragmentTransaction.commit();
                 tittle.setVisibility(View.INVISIBLE);
@@ -110,6 +112,37 @@ public class Home extends AppCompatActivity{
                 drawer.closeDrawer(GravityCompat.START);
             }
         });
+
+        //Profile
+        profile=(LinearLayout)findViewById(R.id.profile_link);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Home.animateClick(profile,Home.this);
+                ProfileMasterFrag profileFrag= new ProfileMasterFrag();
+                android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, profileFrag);
+                fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+                fragmentTransaction.commit();
+                tittle.setVisibility(View.VISIBLE);
+                tittle.setText(getResources().getString(R.string.profile));
+                Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
+                tittle.clearAnimation();
+                tittle.setAnimation(anim2);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
 
 
 
