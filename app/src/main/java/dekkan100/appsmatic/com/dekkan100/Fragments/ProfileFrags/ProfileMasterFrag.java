@@ -40,8 +40,8 @@ public class ProfileMasterFrag extends Fragment {
         tabsStrip = (PagerSlidingTabStrip)view.findViewById(R.id.proflie_master_tabs);
         tabsStrip.setTypeface(Home.face,3);
         adapter = new CustomFragmentPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new MessagesFrag(), getResources().getString(R.string.profiletab));
-        adapter.addFragment(new CategoriesFrag(),getResources().getString(R.string.messagestab));
+        adapter.addFragment(new ProfileFrag(), getResources().getString(R.string.profiletab));
+        adapter.addFragment(new MessagesFrag(),getResources().getString(R.string.messagestab));
         p.setAdapter(adapter);
         tabsStrip.setViewPager(p);
         adapter.notifyDataSetChanged();
