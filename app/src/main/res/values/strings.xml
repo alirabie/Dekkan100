@@ -55,6 +55,12 @@
     <string name="sale">Sale</string>
     <string name="profiletab">Profile</string>
     <string name="messagestab">Messages</string>
+    <string name="addgiftcard">Add Present Card</string>
+    <string name="sender">Sender Name</string>
+    <string name="reciver">Receiver Name</string>
+    <string name="message">Message</string>
+    <string name="relatedproducts">Related Products</string>
+    <string name="buy">Buy</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

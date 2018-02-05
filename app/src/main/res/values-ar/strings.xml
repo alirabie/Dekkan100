@@ -56,4 +56,10 @@
     <string name="vindors">دكاكين</string>
     <string name="messagestab">الرسائل</string>
     <string name="profiletab">الملف الشخصى</string>
+    <string name="addgiftcard">إضافة كارت هدية</string>
+    <string name="message">الرسالة</string>
+    <string name="reciver">اسم المستلم</string>
+    <string name="sender">أسم المرسل</string>
+    <string name="relatedproducts">منتجات مماثله</string>
+    <string name="buy">شراء</string>
 </resources>

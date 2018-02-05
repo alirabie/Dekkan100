@@ -27,6 +27,7 @@ import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
 import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 
 import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
+import dekkan100.appsmatic.com.dekkan100.Fragments.ProductInfoFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileMasterFrag;
 import dekkan100.appsmatic.com.dekkan100.R;
@@ -119,7 +120,7 @@ public class Home extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Home.animateClick(profile,Home.this);
-                ProfileMasterFrag profileFrag= new ProfileMasterFrag();
+                ProfileMasterFrag profileFrag=new ProfileMasterFrag();
                 android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
                 android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.main_container, profileFrag);

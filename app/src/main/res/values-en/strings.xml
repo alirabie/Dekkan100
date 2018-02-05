@@ -56,4 +56,10 @@
     <string name="vindors">Stores</string>
     <string name="messagestab">Messages</string>
     <string name="profiletab">Profile</string>
+    <string name="addgiftcard">Add Present Card</string>
+    <string name="message">Message</string>
+    <string name="reciver">Receiver Name</string>
+    <string name="sender">Sender Name</string>
+    <string name="relatedproducts">Related Products</string>
+    <string name="buy">Buy</string>
 </resources>
