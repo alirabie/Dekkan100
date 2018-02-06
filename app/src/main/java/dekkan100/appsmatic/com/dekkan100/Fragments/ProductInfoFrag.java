@@ -15,13 +15,14 @@ import com.github.aakira.expandablelayout.ExpandableLayout;
 import com.github.aakira.expandablelayout.ExpandableLinearLayout;
 
 import dekkan100.appsmatic.com.dekkan100.Activities.Home;
+import dekkan100.appsmatic.com.dekkan100.Dialogs;
 import dekkan100.appsmatic.com.dekkan100.R;
 
 public class ProductInfoFrag extends Fragment {
 
     LinearLayout expandPresentCard;
     ExpandableLinearLayout presentCard;
-    ImageView arrw,presentCardlogo;
+    ImageView arrw,presentCardlogo,gotoReviews;
     TextView addPresentCardTv,buyBtn,relatedProducts_tv;
 
     @Override
@@ -35,6 +36,7 @@ public class ProductInfoFrag extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         expandPresentCard=(LinearLayout)view.findViewById(R.id.expandable_presentcard);
+        gotoReviews=(ImageView)view.findViewById(R.id.product_details_goto_customercomments);
         presentCard=(ExpandableLinearLayout)view.findViewById(R.id.expandable);
         arrw=(ImageView)view.findViewById(R.id.arrwopen);
         presentCardlogo=(ImageView)view.findViewById(R.id.present_card_img);
@@ -50,17 +52,30 @@ public class ProductInfoFrag extends Fragment {
         expandPresentCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(presentCard.isExpanded()){
+                if (presentCard.isExpanded()) {
                     presentCard.collapse();
                     presentCardlogo.setVisibility(View.INVISIBLE);
                     arrw.setImageResource(R.drawable.dropdownselect);
-                }else {
+                } else {
                     presentCard.expand();
                     presentCardlogo.setVisibility(View.VISIBLE);
                     arrw.setImageResource(R.drawable.dropup);
                 }
             }
         });
+
+        gotoReviews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Home.animateClick(gotoReviews,getContext());
+                Dialogs.productsReviews(getContext(),gotoReviews,"product");
+            }
+        });
+
+
+
+
+
 
 
     }

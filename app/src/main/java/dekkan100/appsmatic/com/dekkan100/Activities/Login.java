@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
         //font style
-        face= Typeface.createFromAsset(getAssets(), "arabic.ttf");
+        face= Typeface.createFromAsset(getAssets(), "fonts/arabic.ttf");
         //setup items
         tittle_tv=(TextView)findViewById(R.id.logintittle);
         forgetpass_btn=(TextView)findViewById(R.id.forgetpass);

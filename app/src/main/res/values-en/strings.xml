@@ -68,4 +68,5 @@
     <string name="send">Send</string>
     <string name="storerate">Rate this Store</string>
     <string name="noreviews">No Reviews</string>
+    <string name="productrate">Rate this Product</string>
 </resources>

@@ -63,7 +63,7 @@ public class Splash extends AppCompatActivity {
         }
 
         //font style
-        face= Typeface.createFromAsset(getAssets(), "arabic.ttf");
+        face= Typeface.createFromAsset(getAssets(), "fonts/arabic.ttf");
 
         langBtn=(ImageView)findViewById(R.id.lang_btn);
         //Set images languages

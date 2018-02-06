@@ -28,9 +28,7 @@ import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 
 import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProductInfoFrag;
-import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileMasterFrag;
-import dekkan100.appsmatic.com.dekkan100.Fragments.StoreFragments.StoreMaster;
 import dekkan100.appsmatic.com.dekkan100.R;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Settings;
 
@@ -46,7 +44,7 @@ public class Home extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
-        face= Typeface.createFromAsset(getAssets(), "arabic.ttf");
+        face= Typeface.createFromAsset(getAssets(), "fonts/arabic.ttf");
         tittle=(TextView)findViewById(R.id.title_text);
         tittle.setTypeface(face);
         tittle.setVisibility(View.INVISIBLE);
@@ -59,8 +57,6 @@ public class Home extends AppCompatActivity{
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
-
-
 
         //add main screen
         android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
