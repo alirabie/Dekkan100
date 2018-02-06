@@ -69,4 +69,5 @@
     <string name="storerate">Rate this Store</string>
     <string name="noreviews">No Reviews</string>
     <string name="productrate">Rate this Product</string>
+    <string name="emptylist">Empty List</string>
 </resources>

@@ -69,4 +69,5 @@
     <string name="storerate">تقييمك لخدمات الدكان</string>
     <string name="noreviews">لا توجد تعليقات</string>
     <string name="productrate">تقييمك للمنتج</string>
+    <string name="emptylist">القائمة فارغه</string>
 </resources>
