@@ -62,4 +62,10 @@
     <string name="sender">أسم المرسل</string>
     <string name="relatedproducts">منتجات مماثله</string>
     <string name="buy">شراء</string>
+    <string name="categories">سلع الدكان</string>
+    <string name="aboutstore">عن الدكان</string>
+    <string name="addreview">أضف تعليق</string>
+    <string name="send">إرسال</string>
+    <string name="storerate">تقييمك لخدمات الدكان</string>
+    <string name="noreviews">لا توجد تعليقات</string>
 </resources>

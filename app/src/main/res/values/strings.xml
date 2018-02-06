@@ -61,6 +61,12 @@
     <string name="message">Message</string>
     <string name="relatedproducts">Related Products</string>
     <string name="buy">Buy</string>
+    <string name="aboutstore">About Store</string>
+    <string name="categories">Categories</string>
+    <string name="storerate">Rate this Store</string>
+    <string name="addreview">Add Comment</string>
+    <string name="send">Send</string>
+    <string name="noreviews">No Reviews</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

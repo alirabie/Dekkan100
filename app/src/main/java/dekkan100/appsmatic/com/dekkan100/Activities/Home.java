@@ -30,6 +30,7 @@ import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProductInfoFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileMasterFrag;
+import dekkan100.appsmatic.com.dekkan100.Fragments.StoreFragments.StoreMaster;
 import dekkan100.appsmatic.com.dekkan100.R;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Settings;
 
