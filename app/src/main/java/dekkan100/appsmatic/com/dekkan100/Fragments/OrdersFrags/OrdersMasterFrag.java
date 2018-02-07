@@ -1,4 +1,4 @@
-package dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags;
+package dekkan100.appsmatic.com.dekkan100.Fragments.OrdersFrags;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,12 +13,11 @@ import com.astuetz.PagerSlidingTabStrip;
 
 import dekkan100.appsmatic.com.dekkan100.Activities.Home;
 import dekkan100.appsmatic.com.dekkan100.Adaptors.CustomFragmentPagerAdapter;
-import dekkan100.appsmatic.com.dekkan100.Fragments.Main.MainTabs.CategoriesFrag;
-import dekkan100.appsmatic.com.dekkan100.Fragments.Main.MainTabs.SaleFrag;
-import dekkan100.appsmatic.com.dekkan100.Fragments.Main.MainTabs.VendorsFrag;
+import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.MessagesFrag;
+import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileFrag;
 import dekkan100.appsmatic.com.dekkan100.R;
 
-public class ProfileMasterFrag extends Fragment {
+public class OrdersMasterFrag extends Fragment {
 
     ViewPager p;
     PagerSlidingTabStrip tabsStrip;
@@ -28,19 +27,19 @@ public class ProfileMasterFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_master, container, false);
+        return inflater.inflate(R.layout.fragment_orders_master, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //Tab Layout With 2 fragments
-        p=(ViewPager)view.findViewById(R.id.viewpager_profile);
-        tabsStrip = (PagerSlidingTabStrip)view.findViewById(R.id.proflie_master_tabs);
+        p=(ViewPager)view.findViewById(R.id.viewpager_orders);
+        tabsStrip = (PagerSlidingTabStrip)view.findViewById(R.id.orders_master_tabs);
         tabsStrip.setTypeface(Home.face,3);
         adapter = new CustomFragmentPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new ProfileFrag(), getResources().getString(R.string.profiletab));
-        adapter.addFragment(new MessagesFrag(),getResources().getString(R.string.messagestab));
+        adapter.addFragment(new OrdersTab(), getResources().getString(R.string.orderstab));
+        adapter.addFragment(new SubOrdersTab(),getResources().getString(R.string.suborderstab));
         p.setAdapter(adapter);
         tabsStrip.setViewPager(p);
         adapter.notifyDataSetChanged();

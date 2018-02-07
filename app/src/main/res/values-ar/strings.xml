@@ -70,4 +70,7 @@
     <string name="noreviews">لا توجد تعليقات</string>
     <string name="productrate">تقييمك للمنتج</string>
     <string name="emptylist">القائمة فارغه</string>
+    <string name="orderstab">الطلبات</string>
+    <string name="suborderstab">الطلبات الفرعية</string>
+    <string name="addtoshoppingcart">أضف الى عربة التسوق</string>
 </resources>

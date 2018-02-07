@@ -84,5 +84,17 @@ dependencies {
     compile 'com.android.support:support-v4:25.+'
 }
 dependencies {
+    compile 'com.android.support:support-v4:25.+'
+}
+dependencies {
+    compile 'com.android.support:support-v4:25.+'
+}
+dependencies {
+    compile 'com.android.support:support-v4:25.+'
+}
+dependencies {
+    compile 'com.android.support:support-v4:25.+'
+}
+dependencies {
     compile 'com.github.aakira:expandable-layout:1.6.0@aar'
 }

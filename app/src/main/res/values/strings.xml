@@ -69,6 +69,9 @@
     <string name="noreviews">No Reviews</string>
     <string name="productrate">Rate this Product</string>
     <string name="emptylist">Empty List</string>
+    <string name="orderstab">Orders</string>
+    <string name="suborderstab">SubOrders</string>
+    <string name="addtoshoppingcart">Add to Shopping Cart</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

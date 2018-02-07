@@ -26,15 +26,17 @@ import android.widget.Toast;
 import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
 import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 
+import dekkan100.appsmatic.com.dekkan100.Fragments.FavoriteFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.LatestoffersFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
+import dekkan100.appsmatic.com.dekkan100.Fragments.OrdersFrags.OrdersMasterFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProductInfoFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileMasterFrag;
 import dekkan100.appsmatic.com.dekkan100.R;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Settings;
 
 public class Home extends AppCompatActivity{
-    private LinearLayout settings,latestOffers,home,profile;
+    private LinearLayout settings,latestOffers,home,profile,myOrders,favorites;
     private TextView tittle ;
     private boolean doubleBackToExitPressedOnce = false;
     public static Typeface face;
@@ -155,11 +157,50 @@ public class Home extends AppCompatActivity{
             }
         });
 
+        //My Orders
+        myOrders=(LinearLayout)findViewById(R.id.myorders_link);
+        myOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Home.animateClick(myOrders,Home.this);
+                OrdersMasterFrag ordersMasterFrag=new OrdersMasterFrag();
+                android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, ordersMasterFrag);
+                fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+                fragmentTransaction.commit();
+                tittle.setVisibility(View.VISIBLE);
+                tittle.setText(getResources().getString(R.string.orders));
+                Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
+                tittle.clearAnimation();
+                tittle.setAnimation(anim2);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
 
 
 
+        //Favorites
+        favorites=(LinearLayout)findViewById(R.id.myfavorites_link);
+        favorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Home.animateClick(favorites,Home.this);
+                FavoriteFrag favoriteFrag=new FavoriteFrag();
+                android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, favoriteFrag);
+                fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+                fragmentTransaction.commit();
+                tittle.setVisibility(View.VISIBLE);
+                tittle.setText(getResources().getString(R.string.favorites));
+                Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
+                tittle.clearAnimation();
+                tittle.setAnimation(anim2);
+                drawer.closeDrawer(GravityCompat.START);
 
-
+            }
+        });
 
 
 
