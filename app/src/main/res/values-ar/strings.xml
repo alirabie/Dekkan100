@@ -73,4 +73,8 @@
     <string name="orderstab">الطلبات</string>
     <string name="suborderstab">الطلبات الفرعية</string>
     <string name="addtoshoppingcart">أضف الى عربة التسوق</string>
+    <string name="contavtus">إتصل بنا</string>
+    <string name="knows">تعرف علينا</string>
+    <string name="meesgeus">قم بمراسلتنا</string>
+    <string name="copyright">جميع الحقوق محفوظة</string>
 </resources>

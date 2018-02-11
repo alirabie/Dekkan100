@@ -29,6 +29,7 @@ dependencies {
     compile 'com.weiwangcn.betterspinner:library:1.1.0'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.ss.bannerslider:bannerslider:1.8.0'
+
 }
 dependencies {
     compile 'com.android.support:support-v4:25.+'
@@ -96,5 +97,9 @@ dependencies {
     compile 'com.android.support:support-v4:25.+'
 }
 dependencies {
+    compile 'com.android.support:support-v4:25.+'
+}
+dependencies {
     compile 'com.github.aakira:expandable-layout:1.6.0@aar'
 }
+

@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
 import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 
+import dekkan100.appsmatic.com.dekkan100.Fragments.AboutApp;
 import dekkan100.appsmatic.com.dekkan100.Fragments.FavoriteFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.LatestoffersFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
@@ -36,7 +37,7 @@ import dekkan100.appsmatic.com.dekkan100.R;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Settings;
 
 public class Home extends AppCompatActivity{
-    private LinearLayout settings,latestOffers,home,profile,myOrders,favorites;
+    private LinearLayout settings,latestOffers,home,profile,myOrders,favorites,aboutApp;
     private TextView tittle ;
     private boolean doubleBackToExitPressedOnce = false;
     public static Typeface face;
@@ -203,6 +204,26 @@ public class Home extends AppCompatActivity{
         });
 
 
+        //about app
+        aboutApp=(LinearLayout)findViewById(R.id.aboutus_link);
+        aboutApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Home.animateClick(aboutApp,Home.this);
+                AboutApp aboutApp=new AboutApp();
+                android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, aboutApp);
+                fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+                fragmentTransaction.commit();
+                tittle.setVisibility(View.VISIBLE);
+                tittle.setText(getResources().getString(R.string.aboutus));
+                Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
+                tittle.clearAnimation();
+                tittle.setAnimation(anim2);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
 
 
 

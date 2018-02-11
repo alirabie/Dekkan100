@@ -73,4 +73,8 @@
     <string name="orderstab">Orders</string>
     <string name="suborderstab">SubOrders</string>
     <string name="addtoshoppingcart">Add to Shopping Cart</string>
+    <string name="contavtus">ContactUs</string>
+    <string name="knows">KnowAboutUs</string>
+    <string name="meesgeus">MessagingUs</string>
+    <string name="copyright">copyright</string>
 </resources>
