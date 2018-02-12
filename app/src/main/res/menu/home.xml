@@ -5,12 +5,14 @@
         android:id="@+id/action_chat"
         android:orderInCategory="100"
         android:icon="@drawable/chat_icon"
+        app:actionLayout="@layout/custom_action_messages_layout"
         android:title=""
         app:showAsAction="always" />
     <item
         android:id="@+id/action_shopping_cart"
         android:orderInCategory="100"
         android:icon="@drawable/cart_icon"
+        app:actionLayout="@layout/custom_action_cart_layout"
         android:title=""
         app:showAsAction="always"/>
 

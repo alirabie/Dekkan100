@@ -77,4 +77,14 @@
     <string name="knows">KnowAboutUs</string>
     <string name="meesgeus">MessagingUs</string>
     <string name="copyright">copyright</string>
+    <string name="contene">Continue</string>
+    <string name="emptycart">Empty Cart</string>
+    <string name="cartempty">Shopping Cart Empty</string>
+    <string name="shoppingcart">Shopping Cart</string>
+    <string name="nomessages">No Messages</string>
+    <string name="noorders">No Orders</string>
+    <string name="nocategories">No Categories</string>
+    <string name="nostores">No Stores</string>
+    <string name="nooffers">No Offers</string>
+    <string name="pressagain">Press Again to Exit App</string>
 </resources>

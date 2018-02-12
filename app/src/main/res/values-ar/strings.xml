@@ -77,4 +77,14 @@
     <string name="knows">تعرف علينا</string>
     <string name="meesgeus">قم بمراسلتنا</string>
     <string name="copyright">جميع الحقوق محفوظة</string>
+    <string name="contene">استمرار</string>
+    <string name="emptycart">افراغ السلة</string>
+    <string name="cartempty">سلة الشراء فارغة</string>
+    <string name="shoppingcart">سلة الشراء</string>
+    <string name="nomessages">لا توجد رسائل</string>
+    <string name="noorders">لا توجد طلبات</string>
+    <string name="nocategories">لا توجد فئات</string>
+    <string name="nostores">لا توجد دككاكين</string>
+    <string name="nooffers">لا توجد تصفيات</string>
+    <string name="pressagain">للخروج من التطبيق إضغط مره اخرى</string>
 </resources>

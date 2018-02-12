@@ -34,7 +34,7 @@ public class AboutApp extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        copyright=getResources().getString(R.string.copyright)+" \u00a9 2018,"+getResources().getString(R.string.app_name);
+        copyright=getResources().getString(R.string.copyright)+" \u00a9 2018 "+getResources().getString(R.string.app_name);
         copyright_tv=(TextView)view.findViewById(R.id.copyrigt_tv);
         copyright_tv.setText(copyright);
 
@@ -66,7 +66,6 @@ public class AboutApp extends Fragment {
                 Home.animateClick(fb, getContext());
             }
         });
-
         tw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

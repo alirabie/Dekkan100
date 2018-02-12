@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -32,16 +33,22 @@ import dekkan100.appsmatic.com.dekkan100.Fragments.LatestoffersFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Main.Main;
 import dekkan100.appsmatic.com.dekkan100.Fragments.OrdersFrags.OrdersMasterFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProductInfoFrag;
+import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.MessagesFrag;
 import dekkan100.appsmatic.com.dekkan100.Fragments.ProfileFrags.ProfileMasterFrag;
+import dekkan100.appsmatic.com.dekkan100.Fragments.ShoppingCartFrag;
 import dekkan100.appsmatic.com.dekkan100.R;
 import dekkan100.appsmatic.com.dekkan100.Fragments.Settings;
 
 public class Home extends AppCompatActivity{
-    private LinearLayout settings,latestOffers,home,profile,myOrders,favorites,aboutApp;
+    private LinearLayout settings,latestOffers,home,profile,myOrders,favorites,aboutApp,messages;
     private TextView tittle ;
     private boolean doubleBackToExitPressedOnce = false;
     public static Typeface face;
     DrawerLayout drawer;
+    public static TextView textCartItemCount;
+    public static int mCartItemCount =2;
+    public static TextView textMessagesItemCount;
+    public static int mMessageItemCount =2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
@@ -226,6 +233,26 @@ public class Home extends AppCompatActivity{
         });
 
 
+        //Messages
+        messages=(LinearLayout)findViewById(R.id.messages_link);
+        messages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Home.animateClick(messages,Home.this);
+                android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, new MessagesFrag());
+                fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+                fragmentTransaction.commit();
+                tittle.setVisibility(View.VISIBLE);
+                tittle.setText(getResources().getString(R.string.mymesages));
+                Animation anim2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
+                tittle.clearAnimation();
+                tittle.setAnimation(anim2);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
 
         drawer= (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -251,34 +278,6 @@ public class Home extends AppCompatActivity{
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -301,11 +300,12 @@ public class Home extends AppCompatActivity{
             tittle.setVisibility(View.INVISIBLE);
             tittle.setText("");
 
-            Toast.makeText(this, "Press Again", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getResources().getString(R.string.pressagain), Toast.LENGTH_SHORT).show();
             if (doubleBackToExitPressedOnce) {
                 final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(Home.this);
                 dialogBuilder
                         .withTitle(getResources().getString(R.string.app_name))
+                        .withIcon(getResources().getDrawable(R.drawable.lunchericon))
                         .withDialogColor(R.color.colorPrimary)
                         .withTitleColor("#FFFFFF")
                         .withDuration(700)                                          //def
@@ -348,6 +348,25 @@ public class Home extends AppCompatActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
+        final MenuItem menuItem = menu.findItem(R.id.action_shopping_cart);
+        final MenuItem menuitem2=menu.findItem(R.id.action_chat);
+        View actionView = MenuItemCompat.getActionView(menuItem);
+        View actionView2= MenuItemCompat.getActionView(menuitem2);
+        textCartItemCount = (TextView) actionView.findViewById(R.id.cart_badge);
+        textMessagesItemCount=(TextView)actionView2.findViewById(R.id.message_badge);
+        actionView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(menuitem2);
+            }
+        });
+
+        actionView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(menuItem);
+            }
+        });
         return true;
     }
 
@@ -360,12 +379,68 @@ public class Home extends AppCompatActivity{
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_shopping_cart) {
+            animateClick(tittle,Home.this);
+            tittle.setVisibility(View.VISIBLE);
+            tittle.setText(getResources().getString(R.string.shoppingcart));
+            android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new ShoppingCartFrag());
+            fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+            fragmentTransaction.commit();
+            return true;
+        }else if (id == R.id.action_chat){
+            Home.animateClick(messages,Home.this);
+            android.support.v4.app.FragmentManager fragmentManager = (Home.this).getSupportFragmentManager();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new MessagesFrag());
+            fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
+            fragmentTransaction.commit();
+            Home.animateClick(tittle, Home.this);
+            tittle.setVisibility(View.VISIBLE);
+            tittle.setText(getResources().getString(R.string.mymesages));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+
+    //Add Messages badge count
+    public static void setupMessageBadge(int count) {
+       mMessageItemCount=count;
+        if (textMessagesItemCount != null) {
+
+            if (mMessageItemCount == 0) {
+                if (textMessagesItemCount.getVisibility() != View.GONE) {
+                    textMessagesItemCount.setVisibility(View.GONE);
+                }
+            } else {
+                textMessagesItemCount.setText(String.valueOf(Math.min(mMessageItemCount, 99)));
+                if (textMessagesItemCount.getVisibility() != View.VISIBLE) {
+                    textMessagesItemCount.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+    }
+
+
+    //Add Cart Messages badge count
+    public static void setupCartBadge(int count) {
+        mCartItemCount=count;
+        if (textCartItemCount != null) {
+
+            if (mCartItemCount == 0) {
+                if (textCartItemCount.getVisibility() != View.GONE) {
+                    textCartItemCount.setVisibility(View.GONE);
+                }
+            } else {
+                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
+                if (textCartItemCount.getVisibility() != View.VISIBLE) {
+                    textCartItemCount.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+    }
 
 
 
